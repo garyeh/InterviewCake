@@ -8,7 +8,17 @@
 # and returns a sorted list of scores in less than O(nlgn) time.
 
 def sort_scores(scores, highest_possible_score):
-    return scores
+    sorted = []
+    counts = [0] * (highest_possible_score + 1)
+
+    for score in scores:
+        counts[score] += 1
+
+    for score in reversed(range(len(counts))):
+        for i in range(counts[score]):
+            sorted.append(score)
+
+    return sorted
 
 unsorted_scores = [37, 89, 41, 65, 91, 53]
 HIGHEST_POSSIBLE_SCORE = 100
