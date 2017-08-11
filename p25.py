@@ -1,7 +1,7 @@
 # K-th to last node in singly linked list
 
 class LinkedListNode:
-
+    
     def __init__(self, value):
         self.value = value
         self.next  = None
